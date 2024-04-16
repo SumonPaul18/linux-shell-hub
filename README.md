@@ -1,7 +1,7 @@
-##How to Run shell script:
+## How to Run shell script:
 sudo chmod +x docker_install.sh
 ./docker_install.sh
 
-###or
+### or
 
 sh docker_install.sh
