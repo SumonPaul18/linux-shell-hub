@@ -4,11 +4,14 @@ red='\033[0;31m'
 nc='\033[0m'
 bold="\033[1m"
 blink="\033[5m"
-echo -e "${bgreen}${bold}${blink} Settings up Static IP Address ${nc} "
+echo -e "${bgreen}Settings up Static IP Address ${nc} "
 
 # Set Hostname
 #echo -e "${bgreen}Type Hostname : ${nc}"
 #read hostname
+
+echo
+echo
 
 read -p "$(echo -e "${bgreen}${bold}${blink}Type System Hostname: ${nc}")" hostname
 
@@ -40,6 +43,9 @@ systemctl restart network
 
 # Verifying IP & MAC Addresses
 ip a
+
+echo
+echo
 
 echo -e "${bgreen}${bold}${blink} Network Settings ${nc} "
 
