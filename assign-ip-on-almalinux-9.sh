@@ -11,7 +11,9 @@ dnf install epel-release -y
 sudo dnf install https://www.rdoproject.org/repos/rdo-release.el9.rpm -y
 dnf install centos-release-openstack-antelope -y
 
+dnf clean all 
 yum clean all
+dnf update
 
 yum install network-scripts -y
 
