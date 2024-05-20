@@ -75,6 +75,18 @@ some variables that you can use:
     On_ICyan='\033[0;106m'    # Cyan
     On_IWhite='\033[0;107m'   # White
 
-if you are using the echo command, be sure to use the -e flag to allow backslash escapes.
 ####
+### Example:
+Create a shell script
+####
+    nano Automatic.sh
+####
+Paste the bellow code in that shell file.
+####
+    RED='\033[0;31m'
+    NC='\033[0m' # No Color
     echo -e "I ${RED}love${NC} Stack Overflow"
+
+#### Note: if you are using the echo command, be sure to use the -e flag to allow backslash escapes.
+####
+    
