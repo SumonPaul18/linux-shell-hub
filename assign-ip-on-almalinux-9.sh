@@ -10,8 +10,6 @@ read hostname
 
 hostnamectl set-hostname $hostname
 
-exec bash
-
 echo -e "${bgreen} Enable PowerTools/CRB repository ${nc} "
 
 dnf install dnf-plugins-core -y
@@ -22,7 +20,7 @@ dnf install centos-release-openstack-antelope -y
 
 dnf clean all 
 yum clean all
-dnf update
+dnf update -y
 
 yum install network-scripts -y
 
