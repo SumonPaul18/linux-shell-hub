@@ -10,7 +10,7 @@ echo -e "${bgreen}${bold}${blink} Settings up Static IP Address ${nc} "
 #echo -e "${bgreen}Type Hostname : ${nc}"
 #read hostname
 
-read -p "$(echo -e "${COLOR}${bold}${blink}Type System Hostname: ${RESET}")" hostname
+read -p "$(echo -e "${bgreen}${bold}${blink}Type System Hostname: ${nc}")" hostname
 
 hostnamectl set-hostname $hostname
 
