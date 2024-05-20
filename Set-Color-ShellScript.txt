@@ -92,4 +92,12 @@ Paste the bellow code in that shell file.
 
 #### Note: if you are using the echo command, be sure to use the -e flag to allow backslash escapes.
 ####
+
+Enhancing User Prompts
+
+echo -e "${GREEN}Enter your name:${NC}"
+read name
+echo -e "${YELLOW}Hello, ${name}!${NC}"
+
+
     
