@@ -52,8 +52,9 @@ echo -e "${bgreen}${bold}${blink} Network Settings ${nc} "
 read -p "Type static IP Interface Name: " STATIC_INTERFACE
 read -p "Type MAC for static Interface: " MAC_Address
 read -p "Type static IP Address with CIDR: " IP_ADDRESS
-#read -p "Type Gateway4: " GATEWAY
-read -p "Type DNS: " DNS
+read -p "Type Gateway4: " GATEWAY
+read -p "Type 1st DNS: " DNS
+read -p "Type 2nd DNS: " DNS2
 
 cat <<EOF | sudo tee /etc/sysconfig/network-scripts/ifcfg-$STATIC_INTERFACE
 HWADRR=$MAC_Address
@@ -62,9 +63,9 @@ BOOTPROTO=static
 ONBOOT=yes
 IPADDR=$IP_ADDRESS
 PREFIX=24
-#GATEWAY=$GATEWAY
+GATEWAY=$GATEWAY
 DNS1=$DNS
-#DNS2=8.8.4.4
+DNS2=$DNS2
 DEVICE=$STATIC_INTERFACE
 
 EOF
@@ -77,3 +78,77 @@ ip a s $STATIC_INTERFACE
 systemctl restart NetworkManager
 ifup $STATIC_INTERFACE
 
+cp /etc/sysconfig/network-scripts/ifcfg-$STATIC_INTERFACE /etc/sysconfig/network-scripts/ifcfg-$STATIC_INTERFACE.bak
+
+cat /etc/sysconfig/network-scripts/ifcfg-$STATIC_INTERFACE
+
+echo "$IP_ADDRESS $hostname.paulco.xyz $hostname" >> /etc/hosts
+
+sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
+
+systemctl disable firewalld
+systemctl stop firewalld
+
+#systemctl status NetworkManager
+systemctl disable NetworkManager
+systemctl stop NetworkManager
+
+ifup $STATIC_INTERFACE
+
+yum autoremove epel-release
+
+yum autoremove openstack-packstack
+ 
+yum clean all
+
+yum repolist
+
+yum update -y && yum upgrade -y
+
+reboot
+
+#Install & Configure OpenStack-PackStack
+
+#For AlmaLinux 9
+
+dnf config-manager --set-enabled crb
+
+#Working On AlmaLinux 9
+dnf install centos-release-openstack-yoga
+
+yum install -y openstack-packstack
+
+yum repolist
+
+yum update -y
+
+packstack --version
+
+packstack --help
+
+#Generate Answers
+
+#Pre-Installation with Generate Answers file
+
+read -p "Type Your OpenStack Administrator Password: " apassword
+
+packstack --os-neutron-ml2-tenant-network-types=vxlan \
+--os-neutron-ovs-bridge-interfaces=br-ex:$STATIC_INTERFACE \
+--os-neutron-ml2-mechanism-drivers=openvswitch \
+--os-neutron-ml2-type-drivers=vxlan,flat \
+--os-neutron-l2-agent=openvswitch \
+--keystone-admin-passwd=$apassword \
+--provision-demo=n \
+--os-heat-install=y \
+--gen-answer-file /root/answers.txt
+
+
+#Take Copy the answes file
+cp answers.txt copy.answers.txt
+
+#Installation OpenStack
+packstack --answer-file /root/answers.txt | tee Openstack-Installation-log.txt
+
+#To access Horizon Dashboard use the URL:
+
+http://$IP_ADDRESS/dashboard
