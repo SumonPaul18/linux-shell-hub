@@ -17,7 +17,6 @@ yum install network-scripts -y
 
 ls /etc/sysconfig/network-scripts/
 
-systemctl status network
 systemctl start network
 systemctl enable network
 
@@ -52,5 +51,5 @@ nmcli connection up $STATIC_INTERFACE
 ip a s $STATIC_INTERFACE
 
 systemctl restart NetworkManager
-
+ifup $STATIC_INTERFACE
 
