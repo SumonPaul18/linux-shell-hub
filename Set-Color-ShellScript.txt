@@ -83,9 +83,10 @@ Create a shell script
 ####
 Paste the bellow code in that shell file.
 ####
-    RED='\033[0;31m'
-    NC='\033[0m' # No Color
-    echo -e "I ${RED}love${NC} Stack Overflow"
+    bgreen='\033[1;32m'
+    red='\033[0;31m'
+    nc='\033[0m' # No Color
+    echo -e "I ${bgreen}love${nc} Stack Overflow"
 
 #### Note: if you are using the echo command, be sure to use the -e flag to allow backslash escapes.
 ####
