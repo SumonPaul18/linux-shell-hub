@@ -83,6 +83,8 @@ Create a shell script
 ####
 Paste the bellow code in that shell file.
 ####
+    #!/bin/bash
+
     bgreen='\033[1;32m'
     red='\033[0;31m'
     nc='\033[0m' # No Color
