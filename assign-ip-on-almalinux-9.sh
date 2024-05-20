@@ -1,9 +1,18 @@
 #!/bin/bash
+bgreen='\033[1;32m'
+red='\033[0;31m'
+nc='\033[0m'
+echo -e "${bgreen} Settings up Static IP Address ${nc} "
 
-# Creates a backup
-#cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.bak_`date +%Y%m%d%H%M`
+# Set Hostname
+echo -e "${bgreen}Type Hostname : ${nc}"
+read hostname
 
-#Enable PowerTools/CRB repository
+hostnamectl set-hostname $hostname
+
+exec bash
+
+echo -e "${bgreen} Enable PowerTools/CRB repository ${nc} "
 
 dnf install dnf-plugins-core -y
 dnf config-manager --set-enabled crb -y
