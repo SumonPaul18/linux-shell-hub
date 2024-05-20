@@ -88,6 +88,8 @@ Paste the bellow code in that shell file.
     bgreen='\033[1;32m'
     red='\033[0;31m'
     nc='\033[0m' # No Color
+    bold="\033[1m"
+    blink="\033[5m"
     echo -e "I ${bgreen}love${nc} Stack Overflow"
 
 #### Note: if you are using the echo command, be sure to use the -e flag to allow backslash escapes.
@@ -98,6 +100,8 @@ Enhancing User Prompts
 echo -e "${GREEN}Enter your name:${NC}"
 read name
 echo -e "${YELLOW}Hello, ${name}!${NC}"
+
+read -p "$(echo -e "${COLOR}Type your name, $USER: ${RESET}")" NAME
 
 
     
