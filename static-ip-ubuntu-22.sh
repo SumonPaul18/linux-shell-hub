@@ -2,6 +2,8 @@
 + Assign IP Addresses ASK using Shell Script +
 ++++++++++++++++++++++++++++++++++++++++++
 
+nano setup-static-ip-ubuntu.sh
+
 #!/bin/bash
 
 # Creates a backup
