@@ -8,3 +8,7 @@ Get IP Address
 Get IP Address Specefic Interface
 
     ip -4 -o addr show enp0s8 | awk '{print $4}' | cut -d "/" -f 1
+
+Get Gateway Address
+
+    ip route | awk 'NR==1 {print $3}'
