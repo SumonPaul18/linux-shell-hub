@@ -118,3 +118,14 @@ for username in "${usernames[@]}"; do
     echo "User '$username' added with home directory '$home_dir'."
 done
 
+
+########
+
+<details>
+ <summary> <b> If We Want to Reset Kubeadm init: When Get Error "kubeadm init" </summary> </b>
+
+   ####
+       kubeadm reset
+</details>
+
+##########
