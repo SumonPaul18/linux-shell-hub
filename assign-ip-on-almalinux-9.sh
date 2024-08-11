@@ -52,6 +52,7 @@ echo -e "${bgreen}${bold}${blink} Network Settings ${nc} "
 read -p "Type static IP Interface Name: " STATIC_INTERFACE
 read -p "Type MAC for static Interface: " MAC_Address
 read -p "Type static IP Address with CIDR: " IP_ADDRESS
+read -p "Type IP Address for CIDR: " CIDR
 read -p "Type Gateway4: " GATEWAY
 read -p "Type 1st DNS: " DNS
 read -p "Type 2nd DNS: " DNS2
@@ -62,7 +63,7 @@ NM_CONTROLLED=no
 BOOTPROTO=static
 ONBOOT=yes
 IPADDR=$IP_ADDRESS
-PREFIX=24
+PREFIX=$CIDR
 GATEWAY=$GATEWAY
 DNS1=$DNS
 DNS2=$DNS2
