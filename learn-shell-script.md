@@ -1,4 +1,4 @@
-### How Create Shell Script
+### How to Create Shell Script
 Get IP Address
 
     hostname --all-ip-addresses | awk '{print $1}'
