@@ -108,4 +108,11 @@ read name
 echo -e "${YELLOW}Hello, ${name}!${NC}"
 read -p "$(echo -e "${COLOR}Type your name, $USER: ${RESET}")" NAME
 ```
+Now, Giving Execution Permission on the shell file
+```
+chmod +x Automatic.sh
+```
+Now, Execute the shell file
+```
+. Automatic.sh
 #
