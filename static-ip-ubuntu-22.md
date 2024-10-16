@@ -1,14 +1,17 @@
-++++++++++++++++++++++++++++++++++++++++++
-+ Assign IP Addresses ASK using Shell Script +
-++++++++++++++++++++++++++++++++++++++++++
 
-nano setup-static-ip-ubuntu.sh
+# Assign IP Addresses ASK using Shell Script
 
-#!/bin/bash
-
-# Creates a backup
+#### Creates a backup
+```
 cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.bak_`date +%Y%m%d%H%M`
+```
+#### Create a Shell Script name `setup-static-ip-ubuntu.sh`
+```
+nano setup-static-ip-ubuntu.sh
+```
 
+```
+#!/bin/bash
 read -p "Type static IP Interface Name: " STATIC_INTERFACE
 read -p "Type DHCP Interface Name: " DHCP_INTERFACE
 read -p "Type static IP Address with CIDR: " IP_ADDRESS
@@ -31,20 +34,27 @@ network:
     $DHCP_INTERFACE:
       dhcp4: yes
 EOF
+```
 
-# Apply the Netplan configuration
+#### Apply the Netplan configuration
+```
 sudo netplan apply
+```
+---
 
-++++++++++++++++++++++++++++++++++++++++++
+# Assign IP Addresses Pre-Define using Shell Script
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+ Assign IP Addresses Pre-Define using Shell Script  +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-#!/bin/bash
-
-# Creates a backup
+#### Creates a backup
+```
 cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.bak_`date +%Y%m%d%H%M`
+```
+#### Create a Shell Script name `setup-static-ip-ubuntu.sh`
+```
+nano setup-static-ip-ubuntu.sh
+```
+
+```
+#!/bin/bash
 
 STATIC_INTERFACE="enp0s3"  
 DHCP_INTERFACE="enp0s8" 
@@ -70,7 +80,8 @@ network:
     $DHCP_INTERFACE:
       dhcp4: yes
 EOF
-
+```
+```
 sudo netplan apply
-
-++++++++++++++++++++++++++++++++++++++++++
+```
+---
