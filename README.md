@@ -1,6 +1,6 @@
 ## Learn shell script:
 ```
-git clone 
+git clone https://github.com/SumonPaul18/linux-scripting.git
 chmod +x linux-scripting/static-ip-ubuntu.sh
 . linux-scripting/static-ip-ubuntu.sh
 ```
