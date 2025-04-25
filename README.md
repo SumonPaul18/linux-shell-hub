@@ -1,10 +1,12 @@
-## Learn shell script:
+## Some daily usefull  shell script:
+---
+### Assign static ip address, hostname & fqdn
 ```
 git clone https://github.com/SumonPaul18/linux-scripting.git
 chmod +x linux-scripting/static-ip-ubuntu.sh
 . linux-scripting/static-ip-ubuntu.sh
 ```
-
+---
 
 
 1. [Learn Shell Script](https://github.com/SumonPaul18/LinuxScripting/blob/main/learn-shell-script.md)
