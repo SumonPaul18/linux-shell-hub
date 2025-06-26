@@ -28,7 +28,7 @@ sudo ufw allow OpenSSH
 # sudo ufw allow 'Nginx Full'
 # If you need specific ports for other services, add them here (e.g., for a database):
 # sudo ufw allow 5432/tcp # Example for PostgreSQL
-sudo ufw enable
+#sudo ufw enable
 sudo ufw status verbose
 
 # --- 4. SSH Configuration for Ansible (Passwordless SSH) ---
@@ -100,7 +100,7 @@ sudo chmod 0440 /etc/sudoers.d/cloud3_nopasswd
 
 # --- 6. Network Configuration Check (Optional but good for troubleshooting) ---
 echo "--- 6. Verifying network configuration ---"
-ip a show eth0 | grep "inet "
+ip a show | grep "inet "
 ping -c 3 192.168.0.93 # Ping back to the source machine to ensure connectivity
 
 echo "--- Script execution completed on 192.168.0.94 ---"
