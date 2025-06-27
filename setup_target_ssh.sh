@@ -60,7 +60,7 @@ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 # Using 'sudo tee -a' to append or 'sudo sed -i' for in-place editing
 echo "--- 4.1 Modifying SSHD configuration for security and Ansible compatibility ---"
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin no/' /etc/ssh/sshd_config
-sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+sudo sed -i 's/#PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 sudo sed -i 's/#ChallengeResponseAuthentication yes/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config
 sudo sed -i 's/#UsePAM yes/UsePAM no/' /etc/ssh/sshd_config # May need to be 'yes' for some setups, 'no' is common for Ansible
 sudo sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding yes/' /etc/ssh/sshd_config
