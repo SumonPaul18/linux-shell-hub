@@ -2,9 +2,9 @@
 ---
 ### Assign static ip address, hostname & fqdn
 ```
-git clone https://github.com/SumonPaul18/linux-scripting.git
-chmod +x linux-scripting/static-ip-ubuntu.sh
-. linux-scripting/static-ip-ubuntu.sh
+git clone https://github.com/SumonPaul18/linux-shell-hub.git
+chmod +x linux-shell-hub/static-ip-ubuntu.sh
+. linux-shell-hub/static-ip-ubuntu.sh
 ```
 ---
 
