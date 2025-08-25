@@ -11,6 +11,7 @@ chmod +x linux-shell-hub/static-ip-ubuntu.sh
 ```
 git clone https://github.com/SumonPaul18/linux-shell-hub.git
 cd linux-shell-hub/initial-linux-config
+ls -la
 ```
 #### Edit config.env with your settings
 ```
@@ -18,6 +19,7 @@ nano config.env
 ```
 #### Run the setup script (must be root)
 ```
+chmod +x setup-server.sh
 sudo ./setup-server.sh
 ```
 
