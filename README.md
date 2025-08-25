@@ -1,13 +1,25 @@
 ## Some daily usefull  shell script:
 ---
-### Assign static ip address, hostname & fqdn
+### Assign static ip address-hostname-fqdn
 ```
 git clone https://github.com/SumonPaul18/linux-shell-hub.git
 chmod +x linux-shell-hub/static-ip-ubuntu.sh
 . linux-shell-hub/static-ip-ubuntu.sh
 ```
 ---
-
+### **Initial Ubuntu Setup** - 
+```
+git clone https://github.com/SumonPaul18/linux-shell-hub.git
+cd linux-shell-hub/initial-linux-config
+```
+#### Edit config.env with your settings
+```
+nano config.env
+```
+#### Run the setup script (must be root)
+```
+sudo ./setup-server.sh
+```
 
 1. [Learn Shell Script](https://github.com/SumonPaul18/LinuxScripting/blob/main/learn-shell-script.md)
 2. [Assign IP Using Shell Script in Ubuntu](https://github.com/SumonPaul18/LinuxScripting/blob/main/static-ip-ubuntu-22.sh)
