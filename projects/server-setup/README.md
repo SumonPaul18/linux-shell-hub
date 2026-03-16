@@ -1,6 +1,6 @@
 # 🚀 Universal Linux Server Setup Script
 
-<div align="center">
+<div align="left">
 
 ![Version](https://img.shields.io/badge/version-3.0-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
