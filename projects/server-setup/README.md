@@ -133,34 +133,45 @@ ping -c 3 8.8.8.8
 ## ⬇️ Installation
 
 ### Method 1: Clone from GitHub (Recommended)
-```bash
-# Clone the repository
+
+#### Clone the repository
+```
 git clone https://github.com/SumonPaul18/linux-shell-hub.git
-cd linux-shell-hub/universal-server-setup
+cd linux-shell-hub/projects/server-setup
+```
+#### Verify List of Directory
+```
+ls -lh
+```
 
-# Make script executable
-chmod +x setup_server_v3.sh
-
-# Verify script integrity (optional)
-sha256sum setup_server_v3.sh
+#### Make script executable
+```
+chmod +x setup-server.sh
+```
+#### Verify script integrity (optional)
+```
+sha256sum setup-server.sh
 ```
 
 ### Method 2: Direct Download
-```bash
-# Download using curl
-curl -O https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/universal-server-setup/setup_server_v3.sh
 
-# OR using wget
-wget https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/universal-server-setup/setup_server_v3.sh
-
-# Make executable and run
-chmod +x setup_server_v3.sh
+#### Download using curl
+```
+curl -O https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/server-setup/setup-server.sh
+```
+#### OR using wget
+```
+wget https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/server-setup/setup-server.sh
+```
+#### Make executable and run
+```
+chmod +x setup-server.sh
 ```
 
 ### Method 3: One-Liner (Advanced Users)
 ```bash
 # Download and execute in one command (use with caution)
-curl -sSL https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/universal-server-setup/setup_server_v3.sh | sudo bash
+curl -sSL https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/server-setup/setup-server.sh | sudo bash
 ```
 
 ---
@@ -169,12 +180,14 @@ curl -sSL https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/main/uni
 
 ### Step-by-Step Execution Guide
 
-```bash
-# 1. Navigate to script directory
-cd ~/linux-shell-hub/universal-server-setup
 
-# 2. Run with sudo
-sudo ./setup_server_v3.sh
+#### 1. Navigate to script directory
+```
+cd ~/linux-shell-hub/projects/server-setup
+```
+#### 2. Run with sudo
+```
+sudo ./server-setup.sh
 ```
 
 ### Interactive Configuration Example
@@ -548,53 +561,26 @@ git push origin feature/amazing-feature
 - ❌ No breaking changes without major version bump
 
 ### Development Setup
-```bash
-# Clone your fork
+
+#### Clone your fork
+```
 git clone https://github.com/YOUR_USERNAME/linux-shell-hub.git
-cd linux-shell-hub/universal-server-setup
-
-# Install testing tools (optional)
+cd linux-shell-hub/projects/server-setup
+```
+#### Install testing tools (optional)
+```
 sudo apt install shellcheck bashunit -y
-
-# Run linting before commit
-shellcheck setup_server_v3.sh
 ```
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
+#### Run linting before commit
 ```
-MIT License
-
-Copyright (c) 2024 Sumon Paul
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+shellcheck server-setup.sh
 ```
 
 ---
 
 ## 👨‍💻 Author
 
-<div align="center">
+<div align="left">
 
 ### Sumon Paul
 **DevOps Engineer | Cloud Infrastructure Specialist**
@@ -614,7 +600,7 @@ SOFTWARE.
 
 ---
 
-<div align="center">
+<div align="left">
 
 ### ⭐ If you find this script helpful, please star the repository! ⭐
 
@@ -632,5 +618,3 @@ echo "Check out this awesome server setup script: https://github.com/SumonPaul18
 </div>
 
 ---
-
-> 📌 **Pro Tip:** Bookmark this README and keep a copy of your successful configuration inputs for future server deployments. Consistency is key in infrastructure management! 🔑
