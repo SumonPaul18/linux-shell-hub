@@ -36,7 +36,7 @@ This script is designed for DevOps Engineers and System Administrators who need 
 ### 1. Download the Script
 
 ```bash
-wget https://raw.githubusercontent.com/your-username/your-repo/main/master_setup.sh
+wget https://raw.githubusercontent.com/SumonPaul18/linux-shell-hub/refs/heads/main/projects/initial-server-setup/v2.0/master_setup.sh
 chmod +x master_setup.sh
 ```
 
